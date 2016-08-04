@@ -1,0 +1,16 @@
+.roster-table {
+  border-collapse: collapse
+}
+
+.roster-table th {
+  background-color: #ccc;
+}
+
+.roster-table td, .roster-table th {
+  border: 1px solid #444;
+  padding: 3px 5px 3px 5px;
+}
+
+.id-number, .birthday {
+  text-align: center;
+}
