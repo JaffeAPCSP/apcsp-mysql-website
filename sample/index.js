@@ -2,6 +2,12 @@
 /* global moment */
 
 function domLoaded() {
+  // Display the student roster in the first table
+  displayStudentRoster();
+  displayRoomList();
+};
+
+function displayStudentRoster() {
   // Set up an AJAX call to Query the database  
   $.ajax({
     url: '../php/dbQuery.php',      // URL of the DB access page
@@ -11,7 +17,7 @@ function domLoaded() {
       username: 'rogerjaffe',       // Your MySQL username
       password: '',                 // Leave blank for Cloud 9 access
       db: 'school',                 // DB name you're connecting to
-      query: 'SELECT * FROM names'  // Your DB query defined as a string
+      query: 'SELECT * FROM names ORDER BY Lastname'  // Your DB query defined as a string
     },
     // This function is called when the database query is completed
     // Information passed to the function is:
@@ -32,14 +38,47 @@ function domLoaded() {
           // http://momentjs.com/docs/#/displaying/ for specific information
           // about the format function
           tr.append('<td class="birthday">'+moment(item.Birthday).format('MMM DD, YYYY')+'</td>');
-          $('tbody').append(tr);
+          $('.roster-table tbody').append(tr);
         });
       } else {
         console.log(result.msg);
       }
     }
-  })
-};
+  });
+}
 
-// When the DOM is loaded 
+function displayRoomList() {
+  // Set up an AJAX call to Query the database  
+  $.ajax({
+    url: '../php/dbQuery.php',      // URL of the DB access page
+    type: 'POST',                   // POST web command
+    dataType: 'json',               // Data will be returned in JSON format
+    data: {                         // These data fields MUST be passed
+      username: 'rogerjaffe',       // Your MySQL username
+      password: '',                 // Leave blank for Cloud 9 access
+      db: 'school',                 // DB name you're connecting to
+      query: 'SELECT * FROM rooms ORDER BY Course'// Your DB query defined as a string
+    },
+    // This function is called when the database query is completed
+    // Information passed to the function is:
+    // result.error       TRUE if there was a DB error
+    // result.msg         String with error message if required
+    // result.errorNumber Error number if connection error
+    // result.data        Data retrieved by the query.  Remember that only
+    //                    SELECT queries return data
+    success: function(result) {
+      if (!result.error) {
+        $.each(result.data, function(idx, item) {
+          var tr = $('<tr></tr>');
+          tr.append('<td class="room-number">'+item.Room+'</td>');
+          tr.append('<td class="course">'+item.Course+'</td>');
+          $('.rooms-table tbody').append(tr);
+        });
+      } else {
+        console.log(result.msg);
+      }
+    }
+  });
+}
+// When the DOM is loaded call domLoaded
 $(document).ready(domLoaded);

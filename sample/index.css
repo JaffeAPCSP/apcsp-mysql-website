@@ -1,16 +1,21 @@
-.roster-table {
+.roster-table, .rooms-table {
   border-collapse: collapse
 }
 
-.roster-table th {
+.roster-table th, .rooms-table th {
   background-color: #ccc;
 }
 
-.roster-table td, .roster-table th {
+.roster-table td, .roster-table th, .rooms-table td, .rooms-table th {
   border: 1px solid #444;
   padding: 3px 5px 3px 5px;
 }
 
-.id-number, .birthday {
+.id-number, .birthday, .room-number, .course {
   text-align: center;
+}
+
+.table-container {
+  vertical-align: top;
+  width: 400px;
 }
