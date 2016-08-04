@@ -16,7 +16,7 @@ class Db {
       // Connection error
       $result = array(
         'error' => TRUE,
-        'error_number' => $mysqli->connect_errno,
+        'errorNumber' => $mysqli->connect_errno,
         'msg'         => 'Connection error'
       );
     } else {
@@ -31,9 +31,13 @@ class Db {
   function query($query) {
     $result = $this->connect();
     $mysqli_query = mysqli_query($this->mysqli, $query);
-    $result['data'] = array();
-    while ($rec = $mysqli_query->fetch_assoc()) {
-      array_push($result['data'], $rec);
+    if ($mysqli_query) {
+      $result['data'] = array();
+      while ($rec = $mysqli_query->fetch_assoc()) {
+        array_push($result['data'], $rec);
+      }
+    } else {
+      $result = array('error' => TRUE, 'msg' => 'Query failed');
     }
     return $result;
   }
