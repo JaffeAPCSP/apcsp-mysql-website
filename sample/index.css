@@ -1,12 +1,14 @@
-.roster-table, .rooms-table {
+.roster-table, .rooms-table, .student-schedule-table {
   border-collapse: collapse
 }
 
-.roster-table th, .rooms-table th {
+.roster-table th, .rooms-table th, .student-schedule-table th {
   background-color: #ccc;
 }
 
-.roster-table td, .roster-table th, .rooms-table td, .rooms-table th {
+.roster-table td, .roster-table th, 
+.rooms-table td, .rooms-table th, 
+.student-schedule-table th, .student-schedule-table td {
   border: 1px solid #444;
   padding: 3px 5px 3px 5px;
 }
