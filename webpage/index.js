@@ -79,6 +79,7 @@ function displayStudentRoster() {
       // If there's an error retrieving the data, log the error
       // message to the console
       console.log(result.msg);
+      alert('Unable to retrieve data. Did you remember to start the MySQL server?');
     }
   }
   
