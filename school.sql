@@ -41,18 +41,18 @@ CREATE TABLE IF NOT EXISTS `names` (
 --
 
 INSERT INTO `names` (`IDnumber`, `Lastname`, `Firstname`, `Birthday`) VALUES
-(100, 'McGonigle', 'Minerva', '1997-10-25 00:00:00'),
+(100, 'McGonagall', 'Minerva', '1997-10-25 00:00:00'),
 (101, 'Snape', 'Severus', '1999-08-08 00:00:00'),
 (102, 'Jaffe', 'Roger', '1998-08-23 00:00:00'),
 (103, 'Riddle', 'Tom', '1999-02-01 00:00:00'),
 (104, 'Weasley', 'Ronald', '1998-12-11 00:00:00'),
-(105, 'Trelawney', 'Sybil', '1998-05-13 00:00:00'),
+(105, 'Trelawney', 'Sybill', '1998-05-13 00:00:00'),
 (106, 'Lupin', 'Remus', '1999-11-30 00:00:00'),
 (107, 'Potter', 'Harry', '1997-05-09 00:00:00'),
-(108, 'Hagrin', 'Norbert', '1998-02-13 00:00:00'),
+(108, 'Hagrid', 'Rubeus', '1998-02-13 00:00:00'),
 (109, 'Sprout', 'Pomona', '1997-08-28 00:00:00'),
 (110, 'Pettigrew', 'Peter', '1999-09-11 00:00:00'),
-(111, 'Weasley', 'Genevra', '1999-01-20 00:00:00'),
+(111, 'Weasley', 'Ginevra', '1999-01-20 00:00:00'),
 (112, 'Lestrange', 'Bellatrix', '1998-03-16 00:00:00'),
 (113, 'Granger', 'Hermione', '1998-07-27 00:00:00'),
 (114, 'Dumbledore', 'Albus', '1997-10-02 00:00:00'),
@@ -63,7 +63,7 @@ INSERT INTO `names` (`IDnumber`, `Lastname`, `Firstname`, `Birthday`) VALUES
 (119, 'Thomas', 'Dean', '1997-07-28 00:00:00'),
 (120, 'Dursley', 'Dudley', '1999-02-12 00:00:00'),
 (121, 'Lovegood', 'Luna', '1997-03-12 00:00:00'),
-(122, 'Lockhart', 'Gildora', '1997-07-25 00:00:00'),
+(122, 'Lockhart', 'Gilderoy', '1997-07-25 00:00:00'),
 (123, 'Longbottom', 'Neville', '1998-11-10 00:00:00');
 
 -- --------------------------------------------------------
